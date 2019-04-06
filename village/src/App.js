@@ -29,7 +29,7 @@ class App extends Component {
     axios
       .post('http://localhost:3333/smurfs', props)
       .then(response => {
-        this.setState({friends: [...this.state.friends, props]
+        this.setState({smurfs: [...this.state.smurfs, props]
       });
     })
     .catch(error => {
