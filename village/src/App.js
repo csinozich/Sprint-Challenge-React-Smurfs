@@ -25,12 +25,11 @@ class App extends Component {
       })
   }
 
-  addToServer = props => {
+  addToServer = smurf => {
     axios
-      .post('http://localhost:3333/smurfs', props)
+      .post('http://localhost:3333/smurfs', smurf)
       .then(response => {
-        this.setState({smurfs: [...this.state.smurfs, props]
-      });
+        this.setState({smurfs: response.data});
     })
     .catch(error => {
       console.log(error)
